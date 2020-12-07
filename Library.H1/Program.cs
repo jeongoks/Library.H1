@@ -6,7 +6,8 @@ namespace Library.H1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Library library = new Library("Sønderborg library");
+            Console.WriteLine(library.GetLibrary());
         }
     }
 }
