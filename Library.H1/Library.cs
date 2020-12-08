@@ -7,26 +7,29 @@ namespace Library.H1
     public class Library
     {
         private string libraryName;
-        private Loanee loanee;
+        private List<Loanee> loanees;
 
         public Library(string name)
         {
             libraryName = name;
-        }
+            loanees = new List<Loanee>();
+        }        
 
         public string GetLibrary()
         {
             return $"Welcome to {libraryName}. The date is {DateTime.Now.ToShortDateString()}.";
         }
 
-        public void CreateLoanee(int loaneeNumber, string loaneeName)
+        public string CreateLoanee(int loaneeNumber, string loaneeName)
         {
-            loanee = new Loanee(loaneeNumber, loaneeName);
+            loanees.Add(new Loanee(loaneeNumber, loaneeName));
+            return $"A loanee has been added with the ID: {loaneeNumber} and with the name: {loaneeName}";
         }
 
-        public string GetLoanee()
+        public string GetLoanee(int id)
         {
-            return $"LoaneeNumber: {loanee.LoaneeNumber}. {loanee.LoaneeName} is a Loanee at {libraryName}.";
+            Loanee firstLoanee = loanees.Find(item => item.LoaneeNumber == id);
+            return $"LoaneeNumber: {firstLoanee.LoaneeNumber}. {firstLoanee.LoaneeName} is a Loanee at {libraryName}.";
         }
     }
 }
