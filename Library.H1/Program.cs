@@ -4,17 +4,47 @@ namespace Library.H1
 {
     class Program
     {
+        static string menuSelect;
+        static Library lib = new Library("Sønderborg library");
         static void Main(string[] args)
         {
-            // Creating a Library and writing out the Date of time.
-            Library library = new Library("Sønderborg library");
-            //Console.WriteLine(library.GetLibrary());
+            while (menuSelect != "4")
+            {
+                Console.Clear();
+                Menu();
+            }
+            
+        }
 
-            // Creating the Loanees and getting their information.
-            library.CreateLoanee(1, "Michael");
-            library.CreateLoanee(2, "Ulrikke");
-            library.CreateLoanee(3, "Martin");
-            library.GetAllLoanees();
+        public static string Menu()
+        {
+            Console.WriteLine("Please select one of the following:\n1. Show library and current date.\n2. Create Loanee.\n3. Print all Loanees.\n4. Exit program.");
+            menuSelect = Console.ReadLine();
+
+            switch (menuSelect)
+            {
+                case "1":
+                    Console.Clear();
+                    Console.WriteLine(lib.GetLibrary());
+                    Console.WriteLine("Please press Enter to return to menu.");
+                    Console.ReadLine();
+                    break;
+                case "2":
+                    Console.Clear();
+                    lib.CreateLoanee();
+                    Console.WriteLine("Please press Enter to return to menu.");
+                    Console.ReadLine();
+                    break;
+                case "3":
+                    Console.Clear();
+                    lib.GetAllLoanees();
+                    Console.WriteLine("Please press Enter to return to menu.");
+                    Console.ReadLine();
+                    break;
+                case "4":
+                    break;
+            }
+            return menuSelect;
         }
     }
 }

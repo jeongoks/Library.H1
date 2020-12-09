@@ -20,10 +20,21 @@ namespace Library.H1
             return $"Welcome to {libraryName}. The date is {DateTime.Now.ToShortDateString()}.\n";
         }
 
-        public string CreateLoanee(int loaneeNumber, string loaneeName)
+        public void CreateLoanee()
         {
-            loanees.Add(new Loanee(loaneeNumber, loaneeName));
-            return $"A loanee has been added with the ID: {loaneeNumber} and with the name: {loaneeName}";
+            Console.Clear();
+            int result = 0;
+            do
+            {
+                Console.WriteLine("Enter Loanees ID number here:");
+            } while (! int.TryParse(Console.ReadLine(), out result));
+
+            Console.WriteLine("Enter Loanees Name here:");
+            string loaneeName = Console.ReadLine();
+
+            loanees.Add(new Loanee(result, loaneeName));
+            Console.Clear();
+
         }
 
         public string GetLoanee(int id)
