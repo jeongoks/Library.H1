@@ -15,7 +15,7 @@ namespace Library.H1.Tests
 
             //  Act
             newLibrary.CreateLoanee(1, "Michael");  //  Actual Test
-            string test = newLibrary.GetLoanee();   //  Should return 
+            string test = newLibrary.GetLoanee(1);   //  Should return 
 
             //  Assert
             Assert.Contains("Michael", test);

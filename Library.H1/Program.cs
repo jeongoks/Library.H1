@@ -8,13 +8,13 @@ namespace Library.H1
         {
             // Creating a Library and writing out the Date of time.
             Library library = new Library("Sønderborg library");
-            Console.WriteLine(library.GetLibrary());
+            //Console.WriteLine(library.GetLibrary());
 
-            // Creating the Loanee and getting their information.
+            // Creating the Loanees and getting their information.
             library.CreateLoanee(1, "Michael");
-            Console.WriteLine(library.GetLoanee());
-
-
+            library.CreateLoanee(2, "Ulrikke");
+            library.CreateLoanee(3, "Martin");
+            library.GetAllLoanees();
         }
     }
 }

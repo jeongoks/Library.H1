@@ -17,7 +17,7 @@ namespace Library.H1
 
         public string GetLibrary()
         {
-            return $"Welcome to {libraryName}. The date is {DateTime.Now.ToShortDateString()}.";
+            return $"Welcome to {libraryName}. The date is {DateTime.Now.ToShortDateString()}.\n";
         }
 
         public string CreateLoanee(int loaneeNumber, string loaneeName)
@@ -30,6 +30,15 @@ namespace Library.H1
         {
             Loanee firstLoanee = loanees.Find(item => item.LoaneeNumber == id);
             return $"LoaneeNumber: {firstLoanee.LoaneeNumber}. {firstLoanee.LoaneeName} is a Loanee at {libraryName}.";
+        }
+
+        public void GetAllLoanees()
+        {
+            Console.WriteLine($"Here is a list of all the Loanees:\n");
+            foreach (var loanee in loanees)
+            {
+                Console.WriteLine($"{GetLoanee(loanee.LoaneeNumber)}");
+            }
         }
     }
 }
