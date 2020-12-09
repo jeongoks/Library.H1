@@ -4,24 +4,20 @@ using System.Text;
 
 namespace Library.H1
 {
-    public class Loanee
+    public class Loanee : Person
     {
         private int loaneeNumber;
-        private string loaneeName;
 
         public int LoaneeNumber
         {
             get { return loaneeNumber; }
         }
-        public string LoaneeName
-        {
-            get { return loaneeName; }
-        }
 
-        public Loanee(int number, string name)
+        public Loanee(int number, string name, string email)
         {
             loaneeNumber = number;
-            loaneeName = name;
+            Name = name;
+            Email = email;
         }
     }
 }
