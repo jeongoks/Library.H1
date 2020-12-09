@@ -9,16 +9,14 @@ namespace Library.H1.Tests
         public void GetLoaneeTest()
         {
             //  Arrange
-            Library newLibrary = new Library("Aarhus");
-            //Loanee newloanee = new Loanee(1, "Michael"); // To Compare Against
-            //string preResult = $"LoaneeNumber: {newloanee.LoaneeNumber}. {newloanee.LoaneeName} is a Loanee at Aarhus."; // prebuild result to compare against
-
+            Library testLibrary = new Library("Aarhus");
+            
             //  Act
-            newLibrary.CreateLoanee(1, "Michael");  //  Actual Test
-            string test = newLibrary.GetLoanee(1);   //  Should return 
+            testLibrary.CreateLoanee(1, "Michael");  //  Actual Test
+            string test = testLibrary.GetLoanee(1);   //  Should return 
 
             //  Assert
-            Assert.Contains("Michael", test);
+            Assert.Contains("Michael", test);   //  ([Expected], [Actual])
         }
     }
 }
