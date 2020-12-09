@@ -32,7 +32,10 @@ namespace Library.H1
             Console.WriteLine("Enter Loanees Name here:");
             string loaneeName = Console.ReadLine();
 
-            loanees.Add(new Loanee(result, loaneeName));
+            Console.WriteLine("Enter Loanees Email here:");
+            string loaneeEmail = Console.ReadLine();
+
+            loanees.Add(new Loanee(result, loaneeName, loaneeEmail));
             Console.Clear();
 
         }
@@ -40,7 +43,7 @@ namespace Library.H1
         public string GetLoanee(int id)
         {
             Loanee firstLoanee = loanees.Find(item => item.LoaneeNumber == id);
-            return $"LoaneeNumber: {firstLoanee.LoaneeNumber}. {firstLoanee.LoaneeName} is a Loanee at {libraryName}.";
+            return $"LoaneeNumber: {firstLoanee.LoaneeNumber}. LoaneeEmail: {firstLoanee.Email}. {firstLoanee.Name} is a Loanee at {libraryName}.";
         }
 
         public void GetAllLoanees()
