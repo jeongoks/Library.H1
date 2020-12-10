@@ -56,13 +56,13 @@ namespace Library.H1
             int result = 0;
             do
             {
-                Console.WriteLine("Enter Loanees ID number here:");
+                Console.WriteLine("Enter new Loanees ID number here:");
             } while (! int.TryParse(Console.ReadLine(), out result));
 
-            Console.WriteLine("Enter Loanees Name here:");
+            Console.WriteLine("Enter new Loanees Name here:");
             string loaneeName = Console.ReadLine();
 
-            Console.WriteLine("Enter Loanees Email here:");
+            Console.WriteLine("Enter new Loanees Email here:");
             string loaneeEmail = Console.ReadLine();
 
             loanees.Add(new Loanee(result, loaneeName, loaneeEmail));
@@ -100,13 +100,13 @@ namespace Library.H1
         {
             Console.Clear();
 
-            Console.WriteLine("Enter the Book's title here:");
+            Console.WriteLine("Enter the new Book's title here:");
             string bookTitle = Console.ReadLine();
 
-            Console.WriteLine("Enter the Book's author here:");
+            Console.WriteLine("Enter the new Book's author here:");
             string bookAuthor = Console.ReadLine();
 
-            Console.WriteLine("Enter the Book's ISBN number here:");
+            Console.WriteLine("Enter the new Book's ISBN number here:");
             string bookIsbn = Console.ReadLine();
 
             books.Add(new Book(bookTitle, bookAuthor, bookIsbn));
