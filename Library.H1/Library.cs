@@ -51,6 +51,8 @@ namespace Library.H1
         /// </summary>
         public void CreateLoanee()
         {
+            Console.Clear();
+
             int result = 0;
             do
             {
@@ -64,8 +66,6 @@ namespace Library.H1
             string loaneeEmail = Console.ReadLine();
 
             loanees.Add(new Loanee(result, loaneeName, loaneeEmail));
-            Console.Clear();
-
         }
 
         /// <summary>
