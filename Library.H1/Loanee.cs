@@ -13,6 +13,12 @@ namespace Library.H1
             get { return loaneeNumber; }
         }
 
+        /// <summary>
+        /// Constructor where we initialize our Fields for the Loanee Class. We use these to Create and Get a Loanee over in Library.
+        /// </summary>
+        /// <param name="number">ID of a Loanee.</param>
+        /// <param name="name">Name of a Loanee.</param>
+        /// <param name="email">Email of a Loanee</param>
         public Loanee(int number, string name, string email)
         {
             loaneeNumber = number;
