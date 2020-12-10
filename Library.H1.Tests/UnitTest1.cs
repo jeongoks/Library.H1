@@ -9,10 +9,11 @@ namespace Library.H1.Tests
         public void GetLoaneeTest()
         {
             //  Arrange
-            Library testLibrary = new Library("Aarhus");
-            
+            Library testLibrary = new Library("Sønderborg");
+            Loanee loanee = new Loanee(1, "Michael", "SomeEmail");
+            testLibrary.Loanees.Add(loanee);
+
             //  Act
-            testLibrary.CreateLoanee(1, "Michael");  //  Actual Test
             string test = testLibrary.GetLoanee(1);   //  Should return 
 
             //  Assert
