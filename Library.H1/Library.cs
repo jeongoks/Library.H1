@@ -51,6 +51,7 @@ namespace Library.H1
         /// </summary>
         public void CreateLoanee()
         {
+            Console.Clear();
             int result = 0;
             do
             {
